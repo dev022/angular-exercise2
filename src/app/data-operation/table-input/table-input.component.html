@@ -1,0 +1,12 @@
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-sm-8">
+          <input type="text" class="form-control" placeholder="Enter Your Name" [(ngModel)]="inpName">
+        </div>
+        <div class="col-sm">
+          <input type="number" class="form-control" placeholder="Enter Your Age"[(ngModel)]="inpAge" >
+        </div>
+      </div>
+      <button type="button" class="btn btn-primary mt-3" (click)="addDataAndGoToDisplay()">Add Data</button>
+</div>
+

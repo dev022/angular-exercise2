@@ -1,0 +1,15 @@
+<div class="container">
+    <table class="table">
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+        </tr>
+        <!-- display data(name and age) -->
+        <tr *ngFor="let display of displayNameAndAge">
+            <td>{{display.name}}</td>
+            <td>{{display.age}}</td>
+        </tr>
+    </table>
+</div>
+
+ <!-- <p *ngFor="let x of displayData">{{x.name}} {{x.age}}</p> -->
