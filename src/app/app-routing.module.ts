@@ -4,8 +4,9 @@ import { TableDisplayComponent } from "./data-operation/table-display/table-disp
 import { TableInputComponent } from "./data-operation/table-input/table-input.component";
 
 const appRoutes:Routes = [
-    {path:'', component:TableInputComponent , pathMatch:'full'},
-    {path:'display' , component:TableDisplayComponent}
+    //load the routing file of data-operayion
+    {path:'data-operation', loadChildren:()=>import('./data-operation/data-operation-routing.module').then(m=>m.DataOperationRoutingModule)},
+    {path:'', redirectTo:'/data-operation' , pathMatch:'full'}
 ];
 
 @NgModule({
