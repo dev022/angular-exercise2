@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DataOperationModule } from './data-operation/data-operation.module';
 
 
@@ -14,6 +14,7 @@ import { DataOperationModule } from './data-operation/data-operation.module';
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     //imports the data-operation module file here
     DataOperationModule  

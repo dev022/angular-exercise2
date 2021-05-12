@@ -1,4 +1,5 @@
 import { Component, OnInit, Output ,EventEmitter} from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 
@@ -8,21 +9,27 @@ import { Router } from '@angular/router';
   styleUrls: ['./table-input.component.css']
 })
 export class TableInputComponent implements OnInit {
-   inpName='';
-   inpAge='';
    inputData:any = [];
+   dataForm:FormGroup;
 
    @Output() inputDataEmitter = new EventEmitter();
 
   constructor(private router:Router) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    //form controls
+    this.dataForm = new FormGroup({
+      'inpName' : new FormControl('',Validators.required),
+      'inpAge'  : new FormControl('',[Validators.required , Validators.pattern(/^[1-9][0-9]*$/)])
+    });
   }
 
   onAddInput(){
     //add name and age to array
-    this.inputData = {name:this.inpName , age:this.inpAge};
+    this.inputData = {name:this.dataForm.get('inpName').value , age:this.dataForm.get('inpAge').value};
     //emit that array
     this.inputDataEmitter.emit(this.inputData);
+    //clear form after submitting
+    this.dataForm.reset();
   }
 }
