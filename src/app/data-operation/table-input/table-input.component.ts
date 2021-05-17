@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./table-input.component.css']
 })
 export class TableInputComponent implements OnInit {
-   inputData:any = [];
+   inputData:any;
    dataForm:FormGroup;
 
    @Output() inputDataEmitter = new EventEmitter();

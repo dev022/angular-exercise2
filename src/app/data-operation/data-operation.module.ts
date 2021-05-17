@@ -6,11 +6,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { TableInputComponent } from './table-input/table-input.component';
 import { TableDisplayComponent } from './table-display/table-display.component';
+import { DataOperationRoutingModule } from './data-operation-routing.module';
 
 @NgModule({
   declarations: [TableInputComponent,TableDisplayComponent],
   imports: [
-    CommonModule,FormsModule,ReactiveFormsModule
+    CommonModule,FormsModule,ReactiveFormsModule,DataOperationRoutingModule
   ]
 })
 export class DataOperationModule { }
